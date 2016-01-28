@@ -18,7 +18,12 @@ Cell.prototype.check_win = function () {
 
 var check_vertically = function(){
   if (this.column >= 3) {
-
+    if(this.row - 1) {
+      if(this.row - 1 )
+      this.color =
+    }
+  }else {
+    return false
   }
   // checks vertically
       // For vertical check, if row number is greater than or equal to 3-check, else return false
