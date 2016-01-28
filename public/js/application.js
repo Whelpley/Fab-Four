@@ -1,9 +1,6 @@
 $(document).ready(function() {
-
   // populateCells();
   fillAColumnListener();
-
-
 });
 
 
@@ -23,7 +20,6 @@ function colorChooser(){
 // Look @ the cellArray and parse out only elements that have common column ID #.
 // First check the lowest rowID for filled = false.  If false, change value to true.
 // If filled is already true, look to the next lowest rowID# and perform above operation.
-
 
 var fillAColumnListener = function() {
 $('#column_id0').on('click', function(e){
@@ -74,6 +70,3 @@ populateCells = function(){
     cellArray.push(newCell)
     }
   }
-
-
-
