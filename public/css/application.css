@@ -1,3 +1,27 @@
+/* Palette Guide:
+Tan - #d8caa8
+Light Green - #5c832f
+Green - #284907
+Brown - #382513
+Blue-Gray - #363942
+*/
+
+* {
+  font-family: Futura;
+}
+body {
+  background-color: #d8caa8;
+   /*background: linear-gradient(#d8caa8, #382513);*/
+}
+
+#title-bar {
+  /*border: 2px dotted #382513;*/
+  background: linear-gradient(white, #284907);
+  text-align: center;
+/*  width: 75%;
+  margin: auto;*/
+}
+
 h1 {
   margin: 0 0 1em 0;
 }
@@ -63,17 +87,18 @@ main {
 }
 
   .demo {
-    border:1px solid #C0C0C0;
+    border:5px solid #363942;
     border-collapse:collapse;
     padding:5px;
+    margin-top: 2em;
   }
   .demo th {
-    border:1px solid #C0C0C0;
+    border:3px solid #363942;
     padding:5px;
     background:#F0F0F0;
   }
   .demo td {
-    border:1px solid #C0C0C0;
+    border:3px solid #363942;
     padding:5px;
   }
 
@@ -102,14 +127,14 @@ td {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #5c832f;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 .dropdown-content-2 {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #5c832f;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
@@ -120,6 +145,8 @@ td {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    background-color: #5c832f;
+
 }
 
 .dropdown-content-2 a {
@@ -127,12 +154,14 @@ td {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    background-color: #5c832f;
+
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {background-color: #363942}
 
-.dropdown-content-2 a:hover {background-color: #f1f1f1}
+.dropdown-content-2 a:hover {background-color: #363942}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
@@ -152,11 +181,18 @@ td {
     left: 0;
 }
 
-/*body {
-  background-image: url('/derek.jpeg');
-  opacity: 0.35;
-  size: 100%;
+.column_class {
+  background: linear-gradient(white, #284907);
+}
+
+/*.button_right {
+  background: linear-gradient(white, #284907);
+
 }*/
-/*table {
-  background-color: white;
-}*/
+
+.dropbtn {
+    background: linear-gradient(white, #284907);
+
+}
+
+
