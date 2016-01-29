@@ -4,7 +4,8 @@ $(document).ready(function() {
   chooseAnIconListener();
  p1Icon = "<img src = 'http://assets.nydailynews.com/polopoly_fs/1.1245686!/img/httpImage/image.jpg_gen/derivatives/article_970/afp-cute-puppy.jpg' height=100px width=100px>";
 p2Icon ="<img src = 'https://openclipart.org/download/231967/blackcat.svg' height=100px width=100px>";
-  console.log(p1Icon);
+  turnChooseToggle();
+
 });
 
 
@@ -44,6 +45,18 @@ populateCells = function(){
     }
   }
 
+function turnChooseToggle(){
+  var cat = true;
+    if (this.cat == true) {
+      this.cat = false;
+      return "Puppy (Player 2)"
+    }
+    else {
+      this.cat = true;
+      return "Cat (Player 1)"
+    }
+}
+
 
 function colorChooser(){
   var color = true;
@@ -63,6 +76,7 @@ function colorChooser(){
 // If filled is already true, look to the next lowest rowID# and perform above operation.
 var fillAColumnListener = function() {
 $('.column_class').click(function(e){
+$('.id_chooser').text(turnChooseToggle())
   var location = $(this);
   e.preventDefault();
   var columnCells = cellArray.filter(function(cell){
