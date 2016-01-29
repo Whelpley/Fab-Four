@@ -78,6 +78,7 @@ $('.id_chooser').text(turnChooseToggle())
   var location = $(this);
   e.preventDefault();
   console.log('clicking');
+  $('.dropbtn').hide();
 
 
   var columnCells = cellArray.filter(function(cell){
