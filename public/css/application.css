@@ -1,3 +1,18 @@
+/* Palette Guide:
+Tan - #d8caa8
+Light Green - #5c832f
+Green - #284907
+Brown - #382513
+Blue-Gray - #363942
+*/
+body {
+  background-color: #d8caa8;
+}
+
+/*header {
+  border: 4 px dotted #284907;
+}*/
+
 h1 {
   margin: 0 0 1em 0;
 }
@@ -63,17 +78,17 @@ main {
 }
 
   .demo {
-    border:1px solid #C0C0C0;
+    border:5px solid #363942;
     border-collapse:collapse;
     padding:5px;
   }
   .demo th {
-    border:1px solid #C0C0C0;
+    border:3px solid #363942;
     padding:5px;
     background:#F0F0F0;
   }
   .demo td {
-    border:1px solid #C0C0C0;
+    border:3px solid #363942;
     padding:5px;
   }
 
@@ -102,14 +117,14 @@ td {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #5c832f;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 .dropdown-content-2 {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #5c832f;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
@@ -120,6 +135,8 @@ td {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    background-color: #5c832f;
+
 }
 
 .dropdown-content-2 a {
@@ -127,6 +144,8 @@ td {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    background-color: #5c832f;
+
 }
 
 /* Change color of dropdown links on hover */
@@ -151,3 +170,4 @@ td {
 #button_right {
     left: 0;
 }
+
