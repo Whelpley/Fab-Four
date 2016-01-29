@@ -1,14 +1,3 @@
-// var Board = function(){
-//   this.won = false;
-// }
-
-
-cell.prototype.check_win = function () {
-  // this.check_vertically();
-  // this.check_horizontally();
-};
-
-
 cell.prototype.check_vertically = function(array){
   for(var i= this.row; i<array.length; i++){
     if(array[i].color == array[i-1].color && array[i].color == array[i-2].color && array[i].color == array[i-3].color){
@@ -24,12 +13,12 @@ cell.prototype.check_vertically = function(array){
   }
 }
 
-
 cell.prototype.check_horizontally = function(row, column){
   var rowArray = cellArray.filter(function(cell){
     return cell.row == row
   })
-  for(var i= 0; i<4; i++) {
+ // console.log(rowArray);
+  for(var i= 0; i < 4; i++) {
       if (rowArray[i].color == rowArray[i+1].color && rowArray[i+1].filled == true && rowArray[i].color == rowArray[i+2].color && rowArray[i+3].filled == true && rowArray[i].color == rowArray[i+3].color && rowArray[i+3].filled == true){
       var winner_image = "<img src='http://www.inarascott.com/wp-content/uploads/2013/11/w.png'>";
       var link_to_reload = "<a href='/'>Play Again!</a>"
@@ -39,8 +28,98 @@ cell.prototype.check_horizontally = function(row, column){
       $('.container').hide();
         return true;
       }
+  // console.log(rowArray)
   }
 }
+
+
+var check_diagonally = function(){
+
+  for(var i=0;i<4;i++) {
+    if (cellArray[i].color == cellArray[i+8].color && cellArray[i].color == cellArray[i+16].color && cellArray[i].color == cellArray[i+24].color && cellArray[i+24].color != null) {
+      console.log("you win diagonally")
+    }
+  }
+  for(var i=7;i<11;i++) {
+    if (cellArray[i].color == cellArray[i+8].color && cellArray[i].color == cellArray[i+16].color && cellArray[i].color == cellArray[i+24].color && cellArray[i+24].color != null){
+      console.log("you win diagonally")
+    }
+  }
+  for(var i=14;i<18;i++) {
+    if (cellArray[i].color == cellArray[i+8].color && cellArray[i].color == cellArray[i+16].color && cellArray[i].color == cellArray[i+24].color && cellArray[i+24].color != null){
+      console.log("you win diagonally")
+    }
+  }
+
+  for(var i = 3;i<7;i++) {
+    if (cellArray[i].color == cellArray[i+6].color && cellArray[i].color == cellArray[i+12].color && cellArray[i].color == cellArray[i+18].color && cellArray[i+18].color != null){
+      console.log("you win diagonally")
+    }
+    }
+
+  for(var i=10;i<14;i++) {
+    if (cellArray[i].color == cellArray[i+6].color && cellArray[i].color == cellArray[i+12].color && cellArray[i].color == cellArray[i+18].color && cellArray[i+18].color != null){
+      console.log("you win diagonally")
+    }
+    }
+
+  for(var i=17;i<21;i++) {
+    if (cellArray[i].color == cellArray[i+6].color && cellArray[i].color == cellArray[i+12].color && cellArray[i].color == cellArray[i+18].color && cellArray[i+18].color != null){
+      console.log("you win diagonally")
+    }
+  }
+}
+
+  // if this.id <= 3 || this.id  10
+  // if cellArray[i].color == cellArray[i+8].color
+  // var id = this.id;
+// Pseudocode:
+  // var counter = 1;
+  // Access cell up and to right
+  // IF color matches,
+  //   counter ++
+  //   IF counter == 4
+  //     WIN!!
+  //   ELSE
+  //     Check cell up & right
+  //       ...repeat till fail ...
+  // ELSE keep counter, Access cell down and to left
+  //   IF color matches,
+  //     counter ++
+  //     IF counter == 4
+  //       WIN!!
+  //     ELSE
+  //      Check next cell down & left
+  //       ... repeat till fail ...
+//    ELSE
+  //   FAIL!!!!
+
+  // //
+  // var upRight = cellArray.filter(function(cell){
+  //   return (cell.id == id + 8);
+  // });
+  // var upRightCell = upRight[0];
+  // console.log(upRightCell);
+  //
+  //
+  // var downLeft = cellArray.filter(function(cell){
+  //   return (cell.id == id - 8);
+  // });
+  //
+  // var downLeftCell = downLeft[0];
+  // console.log(downLeftCell);
+
+  // NEW WAY THAT WILL SAVE US
+// Check ID, case out - check some up-left, some up-right
+
+
+
+
+
+
+
+
+
 
 // checks vertically
     // For vertical check, if row number is greater than or equal to 3-check, else return false
@@ -88,4 +167,3 @@ cell.prototype.check_horizontally = function(row, column){
       // same row numbers, to the left decrease column by 1, to go to the right increase the coloumn by 1.
       // check the left and follow above steps...
       // keep the row number same, decrease the coloumn by 1 to check left until you reach to the edge of the board.
-
