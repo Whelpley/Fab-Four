@@ -1,41 +1,35 @@
-var Board = function(){
-  this.won? = false;
+// var Board = function(){
+//   this.won = false;
+// }
+
+
+cell.prototype.check_win = function () {
+  // this.check_vertically();
+  // this.check_horizontally();
+};
+
+
+cell.prototype.check_vertically = function(array){
+  for(var i= this.row; i<array.length; i++){
+    if(array[i].color == array[i-1].color && array[i].color == array[i-2].color && array[i].color == array[i-3].color){
+      alert('Hey, You Win Vertically!!!');
+      return true;
+    }
+    return false
+  }
 }
 
-Cell.prototype.check_win = function () {
-  this.check_vertically();
-  this.check_horizontally();
-};
 
-//array of all the cell objects with the column number of our current cell
-var filter_array = function(){
-  cellArray.filter(function (cell) {
-  return this.column === cell.column
-});
-};
-
-//on the filter array find the object with row number of our current cell- counter
-var current_cell = function(){
-  filter_array().filter(function (cell) {
-  if (cell.row === (this.row-counter)) {
-    return cell;
-  }
-}};
-
-var check_vertically = function(){
-  // var my_cell = $(this)
-  var counter = 1;
-  while (counter < 4) {
-    if (this.row > 2) {
-      for(var i= 0; i < (this.row - 1) ; i++;){
-        if(this.color == (current_cell().color){
-          counter += 1;
-          return true;
-        }
+cell.prototype.check_horizontally = function(row, column){
+  var rowArray = cellArray.filter(function(cell){
+    return cell.row == row
+  })
+  for(var i= 0; i<4; i++) {
+      if (rowArray[i].color == rowArray[i+1].color && rowArray[i+1].filled == true && rowArray[i].color == rowArray[i+2].color && rowArray[i+3].filled == true && rowArray[i].color == rowArray[i+3].color && rowArray[i+3].filled == true){
+        alert('Hey, You Win Horizontally!!!');
+        return true;
       }
-    }else {
-      return false // vertically checking returns false
-    }
+  console.log(rowArray)
   }
 }
 
@@ -45,35 +39,38 @@ var check_vertically = function(){
     // checks belows, if it is the same, then keep checking till the counter 4
     // if below cell is not the same color, pass it to the horizontally checking
 
-var filter_horizontal_array = function(){
-  cellArray.filter(function (cell) {
-  return this.row === cell.row
-});
-};
+// var filter_horizontal_array = function(){
+//   cellArray.filter(function (cell) {
+//   return this.row === cell.row
+// });
+// };
 
-var current_cell_right = function(){
-  filter_horizontal_array().filter(function (cell) {
-  if (cell.column === (this.column + counter)) {
-    return cell;
-  }
-}};
+// var current_cell_right = function(){
+//   filter_horizontal_array().filter(function (cell) {
+//   if (cell.column === (this.column + counter)) {
+//     debugger
+//     return cell;
+//   }
+// })};
 
-var check_horizontally = function(){
-  unless (this.column == 0 || this.coloumn == 6) {
-    var counter1 = 1;
-    var counter2 = 2;
-    while (counter < 4) {
-        for(var i= 0; i < (this.coloumn - 1) ; i++;){
-          if(this.color == (current_cell_right().color){
-            counter += 1;
-            return true;
-          }
-          else {
-          return false // horizontally checking returns false
-        }
-      }
-    }
-  }
+
+// var check_horizontally = function(){
+//   if (this.column != 0 || this.column != 6) {
+//     var counter1 = 1;
+//     var counter2 = 2;
+//     while (counter < 4) {
+//         for(var i= 0; i < (this.coloumn - 1) ; i++){
+//           if(this.color == (current_cell_right().color){
+//             counter += 1;
+//             return true;
+//           }
+//           else {
+//           return false // horizontally checking returns false
+//         }
+//       }
+//     }
+//   }
+// }
   // checks horizontally
       // unless column == 0, do left check
       // unless column == 6, do right check
@@ -82,4 +79,4 @@ var check_horizontally = function(){
       // same row numbers, to the left decrease column by 1, to go to the right increase the coloumn by 1.
       // check the left and follow above steps...
       // keep the row number same, decrease the coloumn by 1 to check left until you reach to the edge of the board.
-}
+

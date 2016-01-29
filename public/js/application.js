@@ -1,8 +1,31 @@
 $(document).ready(function() {
   populateCells();
+  console.log(cellArray)
   fillAColumnListener();
 });
 
+
+var cellArray = [];
+
+var cell = function(){
+  this.row = null,
+  this.column = null,
+  this.filled = false,
+  this.color = null,
+  this.id = null
+}
+
+
+
+populateCells = function(){
+  for (i=0; i < 42; i++){
+    var newCell = new cell;
+    newCell.id = i;
+    newCell.row = Math.floor(i/7);
+    newCell.column = i%7;
+    cellArray.push(newCell)
+    }
+  }
 
 
 function colorChooser(){
@@ -17,13 +40,14 @@ function colorChooser(){
         }
 }
 
+
 // Look @ the cellArray and parse out only elements that have common column ID #.
 // First check the lowest rowID for filled = false.  If false, change value to true.
 // If filled is already true, look to the next lowest rowID# and perform above operation.
 var fillAColumnListener = function() {
 $('.column_class').click(function(e){
   var location = $(this);
-  console.log(location);
+  // console.log(location);
   e.preventDefault();
   console.log('clicking');
   var columnCells = cellArray.filter(function(cell){
@@ -37,15 +61,22 @@ $('.column_class').click(function(e){
     else if (columnCells[i].filled == false){
       columnCells[i].filled = true;
       columnCells[i].color = colorChooser();
+      // console.log(columnCells[i]);
       var cellColor = columnCells[i].color;
       var cellRow = columnCells[i].row;
       var cellColumn = columnCells[i].column + 1;
       $("#row_"+cellRow+" td:nth-child("+ cellColumn + ")").prepend(cellColor);
+        columnCells[i].check_horizontally(cellRow, cellColumn);
+      if (columnCells[i].row > 2) {
+        columnCells[i].check_vertically(columnCells);
+      }
       break
     }
   }
 })
 }
+
+
 
 // $('#column_id1').submit(function(e){
 //   e.preventDefault;
@@ -59,22 +90,3 @@ $('.column_class').click(function(e){
 // })
 
 
-var cellArray = [];
-
-cell = function(){
-  this.row = null,
-  this.column = null,
-  this.filled = false,
-  this.color = null,
-  this.id = null
-}
-
-populateCells = function(){
-  for (i=0; i < 42; i++){
-    var newCell = new cell;
-    newCell.id = i;
-    newCell.row = Math.floor(i/7);
-    newCell.column = i%7;
-    cellArray.push(newCell)
-    }
-  }
