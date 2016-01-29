@@ -7,6 +7,20 @@ Cell.prototype.check_win = function () {
   this.check_horizontally();
 };
 
+//array of all the cell objects with the column number of our current cell
+var filter_array = function(){
+  cellArray.filter(function (cell) {
+  return this.column === cell.column
+});
+};
+
+//on the filter array find the object with row number of our current cell- counter
+var current_cell = function(){
+  filter_array().filter(function (cell) {
+  if (cell.row === (this.row-counter)) {
+    return cell;
+  }
+}};
 
 var check_vertically = function(){
   // var my_cell = $(this)
@@ -14,7 +28,7 @@ var check_vertically = function(){
   while (counter < 4) {
     if (this.row > 2) {
       for(var i= 0; i < (this.row - 1) ; i++;){
-        if(this.color == (other_cell.color){
+        if(this.color == (current_cell().color){
           counter += 1;
           return true;
         }
@@ -25,25 +39,41 @@ var check_vertically = function(){
   }
 }
 
-//array of all the cell objects with the column number of our current cell
-var filter_array = cellArray.filter(function (cell) {
-  return this.column === cell.column
-});
-
-//on the filter array find the object with row number of our current cell- counter
-var other_cell = filter_array.filter(function (cell) {
-  if (cell.row === (this.row-counter)) {
-    return cell;
-  }
-}
-
 // checks vertically
     // For vertical check, if row number is greater than or equal to 3-check, else return false
     // same coloumn, decrease the row number to check below cell.
     // checks belows, if it is the same, then keep checking till the counter 4
     // if below cell is not the same color, pass it to the horizontally checking
 
+var filter_horizontal_array = function(){
+  cellArray.filter(function (cell) {
+  return this.row === cell.row
+});
+};
+
+var current_cell_right = function(){
+  filter_horizontal_array().filter(function (cell) {
+  if (cell.column === (this.column + counter)) {
+    return cell;
+  }
+}};
+
 var check_horizontally = function(){
+  unless (this.column == 0 || this.coloumn == 6) {
+    var counter1 = 1;
+    var counter2 = 2;
+    while (counter < 4) {
+        for(var i= 0; i < (this.coloumn - 1) ; i++;){
+          if(this.color == (current_cell_right().color){
+            counter += 1;
+            return true;
+          }
+          else {
+          return false // horizontally checking returns false
+        }
+      }
+    }
+  }
   // checks horizontally
       // unless column == 0, do left check
       // unless column == 6, do right check
