@@ -1,7 +1,12 @@
 cell.prototype.check_vertically = function(array){
   for(var i= this.row; i<array.length; i++){
     if(array[i].color == array[i-1].color && array[i].color == array[i-2].color && array[i].color == array[i-3].color){
-      console.log('Hey, You Win Vertically!!!');
+      var winner_image = "<img src='http://40.media.tumblr.com/tumblr_l7bnwmarA51qzzim1o1_1280.png'>";
+      var link_to_reload = "<a href='/'>Play Again!</a>"
+      $('body').prepend("<center> " + winner_image + "</center>");
+      $('body').prepend("<center><br><br><br>Congratulations, " + turnChooseToggle() + "<br> You Win Because You Got Four Vertically and In a Row!<br><br></center>");
+      $('body').append('<center>' + link_to_reload + '</center>')
+      $('.container').hide();
       return true;
     }
     return false
@@ -15,7 +20,12 @@ cell.prototype.check_horizontally = function(row, column){
  // console.log(rowArray);
   for(var i= 0; i < 4; i++) {
       if (rowArray[i].color == rowArray[i+1].color && rowArray[i+1].filled == true && rowArray[i].color == rowArray[i+2].color && rowArray[i+3].filled == true && rowArray[i].color == rowArray[i+3].color && rowArray[i+3].filled == true){
-        console.log('Hey, You Win Horizontally!!!');
+      var winner_image = "<img src='http://40.media.tumblr.com/tumblr_l7bnwmarA51qzzim1o1_1280.png'>";
+      var link_to_reload = "<a href='/'>Play Again!</a>"
+      $('body').prepend("<center> " + winner_image + "</center>");
+      $('body').prepend("<center><br><br><br>Congratulations, " + turnChooseToggle() + "<br> You Win Because You Got Four Horizontally and In a Row!<br><br></center>");
+      $('body').append('<center>' + link_to_reload + '</center>')
+      $('.container').hide();
         return true;
       }
   // console.log(rowArray)
@@ -27,35 +37,65 @@ var check_diagonally = function(){
 
   for(var i=0;i<4;i++) {
     if (cellArray[i].color == cellArray[i+8].color && cellArray[i].color == cellArray[i+16].color && cellArray[i].color == cellArray[i+24].color && cellArray[i+24].color != null) {
-      console.log("you win diagonally")
+      var winner_image = "<img src='http://40.media.tumblr.com/tumblr_l7bnwmarA51qzzim1o1_1280.png'>";
+      var link_to_reload = "<a href='/'>Play Again!</a>"
+      $('body').prepend("<center> " + winner_image + "</center>");
+      $('body').prepend("<center><br><br><br>Congratulations, " + turnChooseToggle() + "<br> You Win Because You Got Four Diagonally and In a Row!<br><br></center>");
+      $('body').append('<center>' + link_to_reload + '</center>')
+      $('.container').hide();
     }
   }
   for(var i=7;i<11;i++) {
     if (cellArray[i].color == cellArray[i+8].color && cellArray[i].color == cellArray[i+16].color && cellArray[i].color == cellArray[i+24].color && cellArray[i+24].color != null){
-      console.log("you win diagonally")
+            var winner_image = "<img src='http://40.media.tumblr.com/tumblr_l7bnwmarA51qzzim1o1_1280.png'>";
+      var link_to_reload = "<a href='/'>Play Again!</a>"
+      $('body').prepend("<center> " + winner_image + "</center>");
+      $('body').prepend("<center><br><br><br>Congratulations, " + turnChooseToggle() + "<br> You Win Because You Got Four Diagonally and In a Row!<br><br></center>");
+      $('body').append('<center>' + link_to_reload + '</center>')
+      $('.container').hide();
     }
   }
   for(var i=14;i<18;i++) {
     if (cellArray[i].color == cellArray[i+8].color && cellArray[i].color == cellArray[i+16].color && cellArray[i].color == cellArray[i+24].color && cellArray[i+24].color != null){
-      console.log("you win diagonally")
+            var winner_image = "<img src='http://40.media.tumblr.com/tumblr_l7bnwmarA51qzzim1o1_1280.png'>";
+      var link_to_reload = "<a href='/'>Play Again!</a>"
+      $('body').prepend("<center> " + winner_image + "</center>");
+      $('body').prepend("<center><br><br><br>Congratulations, " + turnChooseToggle() + "<br> You Win Because You Got Four Diagonally and In a Row!<br><br></center>");
+      $('body').append('<center>' + link_to_reload + '</center>')
+      $('.container').hide();
     }
   }
 
   for(var i = 3;i<7;i++) {
     if (cellArray[i].color == cellArray[i+6].color && cellArray[i].color == cellArray[i+12].color && cellArray[i].color == cellArray[i+18].color && cellArray[i+18].color != null){
-      console.log("you win diagonally")
+            var winner_image = "<img src='http://40.media.tumblr.com/tumblr_l7bnwmarA51qzzim1o1_1280.png'>";
+      var link_to_reload = "<a href='/'>Play Again!</a>"
+      $('body').prepend("<center> " + winner_image + "</center>");
+      $('body').prepend("<center><br><br><br>Congratulations, " + turnChooseToggle() + "<br> You Win Because You Got Four Diagonally and In a Row!<br><br></center>");
+      $('body').append('<center>' + link_to_reload + '</center>')
+      $('.container').hide();
     }
     }
 
   for(var i=10;i<14;i++) {
     if (cellArray[i].color == cellArray[i+6].color && cellArray[i].color == cellArray[i+12].color && cellArray[i].color == cellArray[i+18].color && cellArray[i+18].color != null){
-      console.log("you win diagonally")
+            var winner_image = "<img src='http://40.media.tumblr.com/tumblr_l7bnwmarA51qzzim1o1_1280.png'>";
+      var link_to_reload = "<a href='/'>Play Again!</a>"
+      $('body').prepend("<center> " + winner_image + "</center>");
+      $('body').prepend("<center><br><br><br>Congratulations, " + turnChooseToggle() + "<br> You Win Because You Got Four Diagonally and In a Row!<br><br></center>");
+      $('body').append('<center>' + link_to_reload + '</center>')
+      $('.container').hide();
     }
     }
 
   for(var i=17;i<21;i++) {
     if (cellArray[i].color == cellArray[i+6].color && cellArray[i].color == cellArray[i+12].color && cellArray[i].color == cellArray[i+18].color && cellArray[i+18].color != null){
-      console.log("you win diagonally")
+            var winner_image = "<img src='http://40.media.tumblr.com/tumblr_l7bnwmarA51qzzim1o1_1280.png'>";
+      var link_to_reload = "<a href='/'>Play Again!</a>"
+      $('body').prepend("<center> " + winner_image + "</center>");
+      $('body').prepend("<center><br><br><br>Congratulations, " + turnChooseToggle() + "<br> You Win Because You Got Four Diagonally and In a Row!<br><br></center>");
+      $('body').append('<center>' + link_to_reload + '</center>')
+      $('.container').hide();
     }
   }
 }
