@@ -1,5 +1,6 @@
 $(document).ready(function() {
   populateCells();
+
   fillAColumnListener();
   chooseAnIconListener();
  p1Icon = "<img src = 'http://assets.nydailynews.com/polopoly_fs/1.1245686!/img/httpImage/image.jpg_gen/derivatives/article_970/afp-cute-puppy.jpg' height=100px width=100px>";
@@ -7,7 +8,6 @@ p2Icon ="<img src = 'https://openclipart.org/download/231967/blackcat.svg' heigh
   turnChooseToggle();
 
 });
-
 
 
 var chooseAnIconListener = function() {
@@ -33,8 +33,6 @@ var cell = function(){
   this.id = null
 }
 
-
-
 populateCells = function(){
   for (i=0; i < 42; i++){
     var newCell = new cell;
@@ -45,15 +43,16 @@ populateCells = function(){
     }
   }
 
+
 function turnChooseToggle(){
   var cat = true;
     if (this.cat == true) {
       this.cat = false;
-      return "Puppy (Player 2)"
+      return "Puppy Player!"
     }
     else {
       this.cat = true;
-      return "Cat (Player 1)"
+      return "Cat Player!"
     }
 }
 
@@ -70,7 +69,6 @@ function colorChooser(){
         }
 }
 
-
 // Look @ the cellArray and parse out only elements that have common column ID #.
 // First check the lowest rowID for filled = false.  If false, change value to true.
 // If filled is already true, look to the next lowest rowID# and perform above operation.
@@ -79,9 +77,13 @@ $('.column_class').click(function(e){
 $('.id_chooser').text(turnChooseToggle())
   var location = $(this);
   e.preventDefault();
+  console.log('clicking');
+
+
   var columnCells = cellArray.filter(function(cell){
     return cell.column == location.attr('id')
   }) // the above is a filter function returning only the cells within the column matching location.attr(id)
+
   for (i=0; i<6; i++){
     if (columnCells[5].filled == true) {
         alert ("THIS COLUMN IS FULL! PICK A DIFFERENT ONE.");
@@ -98,27 +100,14 @@ $('.id_chooser').text(turnChooseToggle())
       var cellRow = columnCells[i].row;
       var cellColumn = columnCells[i].column + 1;
       $("#row_"+cellRow+" td:nth-child("+ cellColumn + ")").prepend(cellColor);
-        columnCells[i].check_horizontally(cellRow, cellColumn);
+      //columnCells[i].check_diagonally(cellRow, cellColumn);
+      columnCells[i].check_horizontally(cellRow, cellColumn);
       if (columnCells[i].row > 2) {
         columnCells[i].check_vertically(columnCells);
-      }
+      };
+      check_diagonally();
       break
     }
   }
 })
 }
-
-
-
-// $('#column_id1').submit(function(e){
-//   e.preventDefault;
-//   $.ajax({
-//     method: "POST",
-//     url: '/new_cell'
-//   })
-//   .done(function(responseData){
-//     (responseData.selector).css("background-color", responseData.color)
-//   })
-// })
-
-

@@ -5,13 +5,22 @@ Green - #284907
 Brown - #382513
 Blue-Gray - #363942
 */
+
+* {
+  font-family: Futura;
+}
 body {
   background-color: #d8caa8;
+   /*background: linear-gradient(#d8caa8, #382513);*/
 }
 
-/*header {
-  border: 4 px dotted #284907;
-}*/
+#title-bar {
+  /*border: 2px dotted #382513;*/
+  background: linear-gradient(white, #284907);
+  text-align: center;
+/*  width: 75%;
+  margin: auto;*/
+}
 
 h1 {
   margin: 0 0 1em 0;
@@ -81,6 +90,7 @@ main {
     border:5px solid #363942;
     border-collapse:collapse;
     padding:5px;
+    margin-top: 2em;
   }
   .demo th {
     border:3px solid #363942;
@@ -149,9 +159,9 @@ td {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {background-color: #363942}
 
-.dropdown-content-2 a:hover {background-color: #f1f1f1}
+.dropdown-content-2 a:hover {background-color: #363942}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
@@ -170,4 +180,19 @@ td {
 #button_right {
     left: 0;
 }
+
+.column_class {
+  background: linear-gradient(white, #284907);
+}
+
+/*.button_right {
+  background: linear-gradient(white, #284907);
+
+}*/
+
+.dropbtn {
+    background: linear-gradient(white, #284907);
+
+}
+
 
