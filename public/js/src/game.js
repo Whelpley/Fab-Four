@@ -1,14 +1,3 @@
-// var Board = function(){
-//   this.won = false;
-// }
-
-
-cell.prototype.check_win = function () {
-  // this.check_vertically();
-  // this.check_horizontally();
-};
-
-
 cell.prototype.check_vertically = function(array){
   for(var i= this.row; i<array.length; i++){
     if(array[i].color == array[i-1].color && array[i].color == array[i-2].color && array[i].color == array[i-3].color){
@@ -18,7 +7,6 @@ cell.prototype.check_vertically = function(array){
     return false
   }
 }
-
 
 cell.prototype.check_horizontally = function(row, column){
   var rowArray = cellArray.filter(function(cell){
@@ -32,6 +20,13 @@ cell.prototype.check_horizontally = function(row, column){
   console.log(rowArray)
   }
 }
+
+cell.prototype.check_diagnolly = function(){
+
+}
+
+
+
 
 // checks vertically
     // For vertical check, if row number is greater than or equal to 3-check, else return false
@@ -79,4 +74,3 @@ cell.prototype.check_horizontally = function(row, column){
       // same row numbers, to the left decrease column by 1, to go to the right increase the coloumn by 1.
       // check the left and follow above steps...
       // keep the row number same, decrease the coloumn by 1 to check left until you reach to the edge of the board.
-

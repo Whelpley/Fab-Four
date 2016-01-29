@@ -4,7 +4,6 @@ $(document).ready(function() {
   fillAColumnListener();
 });
 
-
 var cellArray = [];
 
 var cell = function(){
@@ -15,8 +14,6 @@ var cell = function(){
   this.id = null
 }
 
-
-
 populateCells = function(){
   for (i=0; i < 42; i++){
     var newCell = new cell;
@@ -26,7 +23,6 @@ populateCells = function(){
     cellArray.push(newCell)
     }
   }
-
 
 function colorChooser(){
   var color = true;
@@ -39,7 +35,6 @@ function colorChooser(){
           return "<img src = 'https://openclipart.org/download/231967/blackcat.svg' height=100px width=100px>"
         }
 }
-
 
 // Look @ the cellArray and parse out only elements that have common column ID #.
 // First check the lowest rowID for filled = false.  If false, change value to true.
@@ -75,18 +70,3 @@ $('.column_class').click(function(e){
   }
 })
 }
-
-
-
-// $('#column_id1').submit(function(e){
-//   e.preventDefault;
-//   $.ajax({
-//     method: "POST",
-//     url: '/new_cell'
-//   })
-//   .done(function(responseData){
-//     (responseData.selector).css("background-color", responseData.color)
-//   })
-// })
-
-
