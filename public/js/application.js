@@ -2,6 +2,7 @@ $(document).ready(function() {
   populateCells();
   console.log(cellArray)
   fillAColumnListener();
+  turnChooseToggle();
 });
 
 
@@ -27,6 +28,18 @@ populateCells = function(){
     }
   }
 
+function turnChooseToggle(){
+  var cat = true;
+    if (this.cat == true) {
+      this.cat = false;
+      return "Puppy (Player 2)"
+    }
+    else {
+      this.cat = true;
+      return "Cat (Player 1)"
+    }
+}
+
 
 function colorChooser(){
   var color = true;
@@ -46,6 +59,7 @@ function colorChooser(){
 // If filled is already true, look to the next lowest rowID# and perform above operation.
 var fillAColumnListener = function() {
 $('.column_class').click(function(e){
+$('.id_chooser').text(turnChooseToggle())
   var location = $(this);
   // console.log(location);
   e.preventDefault();
