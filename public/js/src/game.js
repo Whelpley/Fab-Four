@@ -1,14 +1,5 @@
-// objects
-// methods
 var Board = function(){
   this.won? = false;
-}
-
-var Cell = function(){
-  this.id = null;
-  this.column = null;
-  this.row = null;
-  this.color = null;
 }
 
 Cell.prototype.check_win = function () {
@@ -16,21 +7,41 @@ Cell.prototype.check_win = function () {
   this.check_horizontally();
 };
 
+
 var check_vertically = function(){
-  if (this.column >= 3) {
-    if(this.row - 1) {
-      if(this.row - 1 )
-      this.color =
+  // var my_cell = $(this)
+  var counter = 1;
+  while (counter < 4) {
+    if (this.row > 2) {
+      for(var i= 0; i < (this.row - 1) ; i++;){
+        if(this.color == (other_cell.color){
+          counter += 1;
+          return true;
+        }
+      }
+    }else {
+      return false // vertically checking returns false
     }
-  }else {
-    return false
   }
-  // checks vertically
-      // For vertical check, if row number is greater than or equal to 3-check, else return false
-      // same coloumn, decrease the row number to check below cell.
-      // checks belows, if it is the same, then keep checking till the counter 4
-      // if below cell is not the same color, pass it to the horizontally checking
 }
+
+//array of all the cell objects with the column number of our current cell
+var filter_array = cellArray.filter(function (cell) {
+  return this.column === cell.column
+});
+
+//on the filter array find the object with row number of our current cell- counter
+var other_cell = filter_array.filter(function (cell) {
+  if (cell.row === (this.row-counter)) {
+    return cell;
+  }
+}
+
+// checks vertically
+    // For vertical check, if row number is greater than or equal to 3-check, else return false
+    // same coloumn, decrease the row number to check below cell.
+    // checks belows, if it is the same, then keep checking till the counter 4
+    // if below cell is not the same color, pass it to the horizontally checking
 
 var check_horizontally = function(){
   // checks horizontally
