@@ -12,7 +12,12 @@ cell.prototype.check_win = function () {
 cell.prototype.check_vertically = function(array){
   for(var i= this.row; i<array.length; i++){
     if(array[i].color == array[i-1].color && array[i].color == array[i-2].color && array[i].color == array[i-3].color){
-      console.log('Hey, You Win Vertically!!!');
+      var winner_image = "<img src='http://40.media.tumblr.com/tumblr_l7bnwmarA51qzzim1o1_1280.png'>";
+      var link_to_reload = "<a href='/'>Play Again!</a>"
+      $('body').prepend("<center> " + winner_image + "</center>");
+      $('body').prepend("<center><br><br><br>Congratulations, " + turnChooseToggle() + "<br> You Win Because You Got Four Vertically and In a Row!<br><br></center>");
+      $('body').append('<center>' + link_to_reload + '</center>')
+      $('.container').hide();
       return true;
     }
     return false
@@ -26,7 +31,12 @@ cell.prototype.check_horizontally = function(row, column){
   })
   for(var i= 0; i<4; i++) {
       if (rowArray[i].color == rowArray[i+1].color && rowArray[i+1].filled == true && rowArray[i].color == rowArray[i+2].color && rowArray[i+3].filled == true && rowArray[i].color == rowArray[i+3].color && rowArray[i+3].filled == true){
-        console.log('Hey, You Win Horizontally!!!');
+      var winner_image = "<img src='http://www.inarascott.com/wp-content/uploads/2013/11/w.png'>";
+      var link_to_reload = "<a href='/'>Play Again!</a>"
+      $('body').prepend("<center> " + winner_image + "</center>");
+      $('body').prepend("<center><br><br><br>Congratulations, " + turnChooseToggle() + "<br> You Win Because You Got Four Horizontally and In a Row!<br><br></center>");
+      $('body').append('<center>' + link_to_reload + '</center>')
+      $('.container').hide();
         return true;
       }
   }

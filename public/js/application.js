@@ -49,11 +49,11 @@ function turnChooseToggle(){
   var cat = true;
     if (this.cat == true) {
       this.cat = false;
-      return "Puppy (Player 2)"
+      return "Puppy Player!"
     }
     else {
       this.cat = true;
-      return "Cat (Player 1)"
+      return "Cat Player!"
     }
 }
 
