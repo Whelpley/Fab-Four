@@ -12,7 +12,7 @@ cell.prototype.check_win = function () {
 cell.prototype.check_vertically = function(array){
   for(var i= this.row; i<array.length; i++){
     if(array[i].color == array[i-1].color && array[i].color == array[i-2].color && array[i].color == array[i-3].color){
-      alert('Hey, You Win Vertically!!!');
+      console.log('Hey, You Win Vertically!!!');
       return true;
     }
     return false
@@ -26,10 +26,9 @@ cell.prototype.check_horizontally = function(row, column){
   })
   for(var i= 0; i<4; i++) {
       if (rowArray[i].color == rowArray[i+1].color && rowArray[i+1].filled == true && rowArray[i].color == rowArray[i+2].color && rowArray[i+3].filled == true && rowArray[i].color == rowArray[i+3].color && rowArray[i+3].filled == true){
-        alert('Hey, You Win Horizontally!!!');
+        console.log('Hey, You Win Horizontally!!!');
         return true;
       }
-  console.log(rowArray)
   }
 }
 
